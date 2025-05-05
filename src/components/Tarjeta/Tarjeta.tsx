@@ -29,7 +29,7 @@ export const Tarjeta: React.FC<TarjetaProps> = ({
 
   return (
     <div
-      className="flex gap-4 p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition cursor-pointer max-w-md"
+      className="flex gap-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition cursor-pointer max-w-md"
       onClick={onClick}
     >
       <img
