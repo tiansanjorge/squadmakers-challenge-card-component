@@ -10,9 +10,11 @@
     "jsx": "react-jsx",
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "strict": true
+    "strict": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true
   },
-  "include": ["src"],
+  "include": ["src/index.ts", "src/components/**/*"],
   "exclude": [
     "**/*.test.ts",
     "**/*.test.tsx",
