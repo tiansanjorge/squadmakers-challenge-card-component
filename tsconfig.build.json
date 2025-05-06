@@ -12,10 +12,15 @@
     "skipLibCheck": true,
     "strict": true,
     "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "checkJs": false,
+    "isolatedModules": true
   },
-  "include": ["src/index.ts", "src/components/**/*"],
+  "include": ["src"],
   "exclude": [
+    "src/App.tsx",
+    "src/main.tsx",
     "**/*.test.ts",
     "**/*.test.tsx",
     "vite.config.ts",

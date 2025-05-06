@@ -1,4 +1,4 @@
-import { Tarjeta } from "./components/Tarjeta";
+import { Tarjeta } from "./components/Tarjeta/Tarjeta";
 
 function App() {
   return (

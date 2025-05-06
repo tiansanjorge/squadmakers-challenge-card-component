@@ -1,54 +1,53 @@
-# React + TypeScript + Vite
+# Tarjeta-lib
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Librería de componentes de React para mostrar tarjetas de personajes estilo Rick & Morty.
 
-Currently, two official plugins are available:
+## Instalación
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Cloná el repositorio o descargá el archivo comprimido `.tgz` generado por `npm pack`.
+2. Copiá ese archivo `.tgz` al directorio raíz del proyecto donde lo vas a usar.
+3. Desde la terminal, en el proyecto destino:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+npm install ./tarjeta-lib-1.0.0.tgz
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+> **Importante**: El archivo `.tgz` debe estar en la misma ruta desde donde ejecutás el comando. No se instala desde cualquier lugar del sistema.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Uso
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+Una vez instalada, podés importar el componente de esta manera:
+
+```tsx
+import { Tarjeta } from "tarjeta-lib";
+
+<Tarjeta
+  nombre="Rick Sanchez"
+  especie="Humano"
+  imagen="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+  ultimaUbicacion="Earth (C-137)"
+  primeraAparicion="Pilot"
+  estado="Vivo"
+  esFavorito={true}
+  onClick={() => alert("Hiciste clic")}
+/>;
 ```
+
+## Props disponibles
+
+```ts
+type TarjetaProps = {
+  nombre: string;
+  especie: string;
+  imagen: string;
+  ultimaUbicacion: string;
+  primeraAparicion: string;
+  estado: "Vivo" | "Muerto" | "Desconocido";
+  esFavorito?: boolean;
+  onClick?: () => void;
+};
+```
+
+## Estilos
+
+Esta librería usa Tailwind CSS. Asegurate de tenerlo configurado en tu proyecto para que los estilos se apliquen correctamente.
