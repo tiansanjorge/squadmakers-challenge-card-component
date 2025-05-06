@@ -4,7 +4,7 @@ Librería de componentes de React para mostrar tarjetas de personajes estilo Ric
 
 ## Instalación
 
-1. Cloná el repositorio o descargá el archivo comprimido `.tgz` generado por `npm pack`.
+1. Cloná el repositorio o descargá el archivo comprimido `tarjeta-lib-1.0.0.tgz` generado por `npm pack`.
 2. Copiá ese archivo `.tgz` al directorio raíz del proyecto donde lo vas a usar.
 3. Desde la terminal, en el proyecto destino:
 
