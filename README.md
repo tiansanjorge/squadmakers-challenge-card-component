@@ -50,4 +50,23 @@ type TarjetaProps = {
 
 ## Estilos
 
-Esta librería usa Tailwind CSS v3. Asegurate de tenerlo configurado en tu proyecto para que los estilos se apliquen correctamente.
+Esta librería usa Tailwind CSS v3 y es necesario agregar una linea en el archivo `tailwind.config.js` del proyecto donde consumís la librería para que se escaneen sus estilos.
+
+Dentro de la propiedad content agregá esta ruta:
+`"./node_modules/tarjeta-lib/dist/components/\*_/_.{js,ts,jsx,tsx}"`
+
+```js
+// Ejemplo:
+/** @type {import('tailwindcss').Config} \*/
+export default {
+  content: [
+    "./index.html",
+    "./src/**/_.{js,ts,jsx,tsx}",
+    `./node_modules/tarjeta-lib/dist/components/\*\*/_.{js,ts,jsx,tsx}"`, // ← Agregar esta linea
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+```
