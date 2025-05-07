@@ -7,8 +7,8 @@ function App() {
         nombre="Morty Smith"
         especie="Humano"
         imagen="https://rickandmortyapi.com/api/character/avatar/2.jpeg"
-        ultimaUbicacion="Citadel of Ricks"
-        primeraAparicion="Pilot"
+        ubicacion="Citadel of Ricks"
+        origen="Pilot"
         estado="Vivo"
         esFavorito={true}
         onClick={() => alert("Haz hecho clic en la tarjeta")}

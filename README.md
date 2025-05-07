@@ -25,8 +25,8 @@ import { Tarjeta } from "tarjeta-lib";
   nombre="Rick Sanchez"
   especie="Humano"
   imagen="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
-  ultimaUbicacion="Earth (C-137)"
-  primeraAparicion="Pilot"
+  ubicacion="Earth (C-137)"
+  origen="Pilot"
   estado="Vivo"
   esFavorito={true}
   onClick={() => alert("Hiciste clic")}
@@ -40,8 +40,8 @@ type TarjetaProps = {
   nombre: string;
   especie: string;
   imagen: string;
-  ultimaUbicacion: string;
-  primeraAparicion: string;
+  ubicacion: string;
+  origen: string;
   estado: "Vivo" | "Muerto" | "Desconocido";
   esFavorito?: boolean;
   onClick?: () => void;
