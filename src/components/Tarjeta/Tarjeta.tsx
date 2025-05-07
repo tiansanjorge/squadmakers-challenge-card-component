@@ -21,12 +21,6 @@ export const Tarjeta: React.FC<TarjetaProps> = ({
   esFavorito = false,
   onClick,
 }) => {
-  const colorEstado = {
-    Vivo: "text-green-500",
-    Muerto: "text-red-500",
-    Desconocido: "text-gray-500",
-  };
-
   return (
     <div
       className="flex gap-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition cursor-pointer max-w-md"
@@ -55,7 +49,15 @@ export const Tarjeta: React.FC<TarjetaProps> = ({
           <span className="font-medium">Primera aparición:</span>{" "}
           {primeraAparicion}
         </p>
-        <p className={`text-sm font-semibold mt-1 ${colorEstado[estado]}`}>
+        <p
+          className={`text-sm font-semibold mt-1 ${
+            estado === "Vivo"
+              ? "text-green-500"
+              : estado === "Muerto"
+              ? "text-red-500"
+              : "text-gray-500"
+          }`}
+        >
           {estado}
         </p>
       </div>
