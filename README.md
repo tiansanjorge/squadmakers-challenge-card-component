@@ -50,4 +50,4 @@ type TarjetaProps = {
 
 ## Estilos
 
-Esta librería usa Tailwind CSS. Asegurate de tenerlo configurado en tu proyecto para que los estilos se apliquen correctamente.
+Esta librería usa Tailwind CSS v3. Asegurate de tenerlo configurado en tu proyecto para que los estilos se apliquen correctamente.
