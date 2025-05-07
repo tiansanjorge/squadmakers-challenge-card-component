@@ -8,8 +8,8 @@ const mockProps: TarjetaProps = {
   nombre: "Rick Sanchez",
   especie: "Humano",
   imagen: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
-  ultimaUbicacion: "Earth (C-137)",
-  primeraAparicion: "Pilot",
+  origen: "Earth (C-137)",
+  ubicacion: "Pilot",
   estado: "Vivo",
 };
 

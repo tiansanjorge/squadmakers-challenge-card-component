@@ -4,8 +4,8 @@ export interface TarjetaProps {
   nombre: string;
   especie: string;
   imagen: string;
-  ultimaUbicacion: string;
-  primeraAparicion: string;
+  ubicacion: string;
+  origen: string;
   estado: "Vivo" | "Muerto" | "Desconocido";
   esFavorito?: boolean;
   onClick?: () => void;
@@ -15,8 +15,8 @@ export const Tarjeta: React.FC<TarjetaProps> = ({
   nombre,
   especie,
   imagen,
-  ultimaUbicacion,
-  primeraAparicion,
+  ubicacion,
+  origen,
   estado,
   esFavorito = false,
   onClick,
@@ -42,12 +42,10 @@ export const Tarjeta: React.FC<TarjetaProps> = ({
 
         <p className="text-sm text-gray-500 mb-1">{especie}</p>
         <p className="text-sm text-gray-600">
-          <span className="font-medium">Última ubicación:</span>{" "}
-          {ultimaUbicacion}
+          <span className="font-medium">Última ubicación:</span> {ubicacion}
         </p>
         <p className="text-sm text-gray-600">
-          <span className="font-medium">Primera aparición:</span>{" "}
-          {primeraAparicion}
+          <span className="font-medium">Primera aparición:</span> {origen}
         </p>
         <p
           className={`text-sm font-semibold mt-1 ${
