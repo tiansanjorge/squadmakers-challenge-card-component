@@ -34,6 +34,10 @@ npm install ./tarjeta-lib-1.0.0.tgz
 - `vitest`, `@testing-library/react` para testing
 - ESLint y Prettier configurados
 
+## ⚠️ Nota importante
+
+Esta librería fue desarrollada utilizando **TailwindCSS v3**. No es compatible con Tailwind v4 debido a conflictos de compilación al ser utilizada como dependencia empaquetada (`.tgz`).
+
 ## ✅ Testing
 
 ```bash
