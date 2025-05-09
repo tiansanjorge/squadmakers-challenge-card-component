@@ -1,3 +1,5 @@
+import React from "react";
+
 export interface TarjetaProps {
   nombre: string;
   especie: string;
@@ -26,7 +28,7 @@ export const Tarjeta: React.FC<TarjetaProps> = ({
       className="flex gap-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition cursor-pointer max-w-md"
       onClick={onClick}
     >
-      {/* Estrella */}
+      {/* Imagen + Estrella */}
       <div className="relative">
         <img
           src={imagen}
@@ -38,9 +40,10 @@ export const Tarjeta: React.FC<TarjetaProps> = ({
             e.stopPropagation();
             onToggleFavorito?.();
           }}
-          className="absolute top-0 left-0 bg-lime-200 rounded-full p-1"
+          className="absolute top-0 left-0 bg-lime-200 rounded-full w-6 h-6 flex items-center justify-center shadow"
+          aria-label="Toggle favorito"
         >
-          <span className="text-green-700 text-xl">
+          <span className="text-green-700 text-sm leading-none">
             {esFavorito ? "★" : "☆"}
           </span>
         </button>
@@ -51,7 +54,7 @@ export const Tarjeta: React.FC<TarjetaProps> = ({
         <div className="flex items-center justify-between mb-1">
           <h2 className="text-xl font-bold text-gray-900">{nombre}</h2>
           <span
-            className={`text-sm font-semibold px-3 py-1 rounded-full ${
+            className={`text-xs font-semibold px-2 py-1 rounded-full ${
               estado === "Vivo"
                 ? "bg-lime-200 text-green-800"
                 : estado === "Muerto"
