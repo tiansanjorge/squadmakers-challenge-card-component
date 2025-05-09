@@ -35,4 +35,12 @@ describe("Tarjeta", () => {
     fireEvent.click(screen.getByText("Rick Sanchez"));
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
+
+  it("ejecuta onToggleFavorito al hacer click en la estrella", () => {
+    const handleToggle = vi.fn();
+    render(<Tarjeta {...mockProps} onToggleFavorito={handleToggle} />);
+    const boton = screen.getByLabelText("Toggle favorito");
+    fireEvent.click(boton);
+    expect(handleToggle).toHaveBeenCalledTimes(1);
+  });
 });

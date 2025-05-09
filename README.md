@@ -1,72 +1,41 @@
-# Tarjeta-lib
+# Tarjeta Lib
 
-Librería de componentes de React para mostrar tarjetas de personajes estilo Rick & Morty.
+Librería de componentes desarrollada para el Squadmakers Challenge. Exporta un único componente `Tarjeta`, diseñado para visualizar información de personajes de Rick & Morty.
 
-## Instalación
+## 🚀 Instalación
 
-1. Cloná el repositorio o descargá el archivo comprimido `tarjeta-lib-1.0.0.tgz` generado por `npm pack`.
-2. Copiá ese archivo `.tgz` al directorio raíz del proyecto donde lo vas a usar.
-3. Desde la terminal, en el proyecto destino:
+1. Construí el paquete:
+
+```bash
+npm run build
+npm pack
+```
+
+2. Copiá el archivo `.tgz` generado a la raíz del proyecto consumidor.
+
+3. Instalalo localmente:
 
 ```bash
 npm install ./tarjeta-lib-1.0.0.tgz
 ```
 
-> **Importante**: El archivo `.tgz` debe estar en la raiz del proyecto, desde donde ejecutás el comando.
+## 🏗️ Arquitectura
 
-## Uso
+- Componente `Tarjeta` basado en React.
+- Estilos con TailwindCSS.
+- Exportación de componentes mediante `exports` en `package.json`.
+- Compatible con React 18 y 19.
 
-Una vez instalada, podés importar el componente de esta manera:
+## 📦 Dependencias destacadas
 
-```tsx
-import { Tarjeta } from "tarjeta-lib";
+- `react`, `react-dom` (peer dependencies)
+- `tailwindcss`
+- `vite` para entorno de desarrollo
+- `vitest`, `@testing-library/react` para testing
+- ESLint y Prettier configurados
 
-<Tarjeta
-  nombre="Rick Sanchez"
-  especie="Humano"
-  imagen="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
-  ubicacion="Earth (C-137)"
-  origen="Pilot"
-  estado="Vivo"
-  esFavorito={true}
-  onClick={() => alert("Hiciste clic")}
-/>;
-```
+## ✅ Testing
 
-## Props disponibles
-
-```ts
-type TarjetaProps = {
-  nombre: string;
-  especie: string;
-  imagen: string;
-  ubicacion: string;
-  origen: string;
-  estado: "Vivo" | "Muerto" | "Desconocido";
-  esFavorito?: boolean;
-  onClick?: () => void;
-};
-```
-
-## Estilos
-
-Esta librería usa Tailwind CSS v3 y es necesario agregar una linea en el archivo `tailwind.config.js` del proyecto donde consumís la librería para que se escaneen sus estilos.
-
-Dentro de la propiedad content agregá esta ruta:
-`"./node_modules/tarjeta-lib/dist/components/\*_/_.{js,ts,jsx,tsx}"`
-
-```js
-// Ejemplo:
-/** @type {import('tailwindcss').Config} \*/
-export default {
-  content: [
-    "./index.html",
-    "./src/**/_.{js,ts,jsx,tsx}",
-    `./node_modules/tarjeta-lib/dist/components/\*\*/_.{js,ts,jsx,tsx}"`, // ← Agregar esta linea
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-};
+```bash
+npm run test
 ```
