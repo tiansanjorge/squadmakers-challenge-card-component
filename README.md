@@ -38,6 +38,8 @@ npm install ./tarjeta-lib-1.0.0.tgz
 
 Esta librería fue desarrollada utilizando **TailwindCSS v3**. No es compatible con Tailwind v4 debido a conflictos de compilación al ser utilizada como dependencia empaquetada (`.tgz`).
 
+Esta librería fue construida usando **TailwindCSS v3** para garantizar compatibilidad con consumidores empaquetados mediante `.tgz`, ya que la reciente v4 de Tailwind introduce cambios que afectan a librerías distribuidas en este formato.
+
 ## ✅ Testing
 
 ```bash
