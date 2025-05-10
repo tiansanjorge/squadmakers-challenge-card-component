@@ -4,19 +4,25 @@ Librería de componentes desarrollada para el Squadmakers Challenge. Exporta un 
 
 ## 🚀 Instalación
 
-1. Construí el paquete:
+1. **Descargá el archivo `.tgz` directamente desde este repositorio** (siempre se encuentra la última versión):
 
-```bash
-npm run build
-npm pack
-```
+[Descargar tarjeta-lib-1.0.0.tgz](https://github.com/usuario/repo-name/raw/main/tarjeta-lib-1.0.0.tgz)
 
-2. Copiá el archivo `.tgz` generado a la raíz del proyecto consumidor.
+2. Copiá el archivo a la raíz del proyecto donde lo vas a usar.
 
 3. Instalalo localmente:
 
 ```bash
 npm install ./tarjeta-lib-1.0.0.tgz
+```
+
+---
+
+### 🔁 Alternativamente, podés generar el archivo `.tgz` desde el código fuente:
+
+```bash
+npm run build
+npm pack
 ```
 
 ## 🏗️ Arquitectura
@@ -34,9 +40,9 @@ npm install ./tarjeta-lib-1.0.0.tgz
 - `vitest`, `@testing-library/react` para testing
 - ESLint y Prettier configurados
 
-## 📌 Nota
+## 📌 Nota sobre compatibilidad
 
-Los proyectos que la utilicen deben utilziar **TailwindCSS v3**, ya que esta librería fue construida con esa versión para asegurar compatibilidad al empaquetarla como `.tgz`. La reciente v4 de Tailwind introduce cambios que afectan este formato.
+Los proyectos que la utilicen deben estar también configurados con **Tailwind v3**, ya que esta librería fue construida con esa versión para asegurar compatibilidad al empaquetarla como `.tgz`. Tailwind v4 introduce cambios que afectan este formato.
 
 ## ✅ Testing
 
