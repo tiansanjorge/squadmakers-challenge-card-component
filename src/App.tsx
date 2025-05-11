@@ -9,7 +9,7 @@ function App() {
         imagen="https://rickandmortyapi.com/api/character/avatar/2.jpeg"
         ubicacion="Citadel of Ricks"
         origen="Pilot"
-        estado="Muerto"
+        estado="Desconocido"
         esFavorito={true}
         onClick={() => alert("Haz hecho clic en la tarjeta")}
       />
