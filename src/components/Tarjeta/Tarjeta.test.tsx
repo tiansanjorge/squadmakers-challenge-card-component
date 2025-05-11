@@ -21,12 +21,22 @@ describe("Tarjeta", () => {
 
   it("muestra la estrella de favorito si esFavorito es true", () => {
     render(<Tarjeta {...mockProps} esFavorito />);
-    expect(screen.getByText("★")).toBeInTheDocument();
+    const estrellaLlena = screen.getByAltText("Quitar de favoritos");
+    expect(estrellaLlena).toBeInTheDocument();
+    expect(estrellaLlena).toHaveAttribute(
+      "src",
+      expect.stringContaining("star-full")
+    );
   });
 
   it("muestra la estrella vacía si esFavorito es false o no está", () => {
     render(<Tarjeta {...mockProps} />);
-    expect(screen.getByText("☆")).toBeInTheDocument();
+    const estrellaVacia = screen.getByAltText("Agregar a favoritos");
+    expect(estrellaVacia).toBeInTheDocument();
+    expect(estrellaVacia).toHaveAttribute(
+      "src",
+      expect.stringContaining("star-empty")
+    );
   });
 
   it("ejecuta onClick al hacer click", () => {
