@@ -12,6 +12,11 @@
     "strict": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src/index.ts", "src/components/Tarjeta/Tarjeta.tsx"],
+  "include": [
+    "src/components/Tarjeta/Tarjeta.tsx",
+    "src/index.ts",
+    "src/assets/**/*",
+    "src/declarations.d.ts"
+  ],
   "exclude": ["**/*.test.tsx", "node_modules", "dist"]
 }

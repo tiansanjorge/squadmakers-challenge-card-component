@@ -18,13 +18,6 @@ npm install ./tarjeta-lib-1.0.0.tgz
 
 ---
 
-### 🔁 Alternativamente, podés generar el archivo `.tgz` desde el código fuente:
-
-```bash
-npm run build
-npm pack
-```
-
 ## 🏗️ Arquitectura
 
 - Componente `Tarjeta` basado en React.

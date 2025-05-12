@@ -20,6 +20,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -p tsconfig.build.json",
+    "postbuild": "xcopy /E /I /Y src\\assets dist\\assets",
     "lint": "eslint . --ext .ts,.tsx",
     "preview": "vite preview",
     "test": "vitest"

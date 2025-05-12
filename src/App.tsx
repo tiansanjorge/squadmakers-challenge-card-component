@@ -10,7 +10,7 @@ function App() {
         ubicacion="Citadel of Ricks"
         origen="Pilot"
         estado="Desconocido"
-        esFavorito={true}
+        esFavorito={false}
         onClick={() => alert("Haz hecho clic en la tarjeta")}
       />
     </div>

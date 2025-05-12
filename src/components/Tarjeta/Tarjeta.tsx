@@ -1,4 +1,11 @@
+/// <reference path="../../declarations.d.ts" />
+
 import React from "react";
+import starFull from "../../assets/star-full.png";
+import starEmpty from "../../assets/star-empty.png";
+import aliveIcon from "../../assets/alive.png";
+import deadIcon from "../../assets/dead.png";
+import unknownIcon from "../../assets/unknown.png";
 
 export interface TarjetaProps {
   nombre: string;
@@ -23,7 +30,7 @@ export const Tarjeta: React.FC<TarjetaProps> = ({
   onClick,
   onToggleFavorito,
 }) => {
-  const starSrc = esFavorito ? "/star-full.png" : "/star-empty.png";
+  const starSrc = esFavorito ? starFull : starEmpty;
   const starAlt = esFavorito ? "Quitar de favoritos" : "Agregar a favoritos";
 
   return (
@@ -32,18 +39,20 @@ export const Tarjeta: React.FC<TarjetaProps> = ({
       onClick={onClick}
     >
       {/* Imagen + Estrella */}
-      <div className="relative w-full sm:w-auto">
+      <div className="relative">
         <img
           src={imagen}
           alt={nombre}
-          className="w-full sm:w-36 h-60 sm:h-36 object-cover rounded-t-lg sm:rounded-t-none sm:rounded-l-lg"
+          className="w-full max-h-[238px] sm:max-h-none sm:w-36 sm:h-36 max-w-none object-cover object-center rounded-t-lg sm:rounded-tr-none sm:rounded-l-lg"
         />
         <button
           onClick={(e) => {
             e.stopPropagation();
             onToggleFavorito?.();
           }}
-          className="absolute top-2 right-2 sm:left-2 sm:right-auto bg-lime-200 rounded-full w-11 h-11 flex items-center justify-center shadow"
+          className={`absolute top-2 right-2 sm:left-2 sm:right-auto ${
+            esFavorito ? "bg-lime-200" : "bg-gray-50"
+          } rounded-full w-11 h-11 flex items-center justify-center shadow`}
           aria-label="Toggle favorito"
         >
           <img src={starSrc} alt={starAlt} className="w-5 h-5" />
@@ -51,7 +60,7 @@ export const Tarjeta: React.FC<TarjetaProps> = ({
       </div>
 
       {/* Contenido */}
-      <div className="flex flex-col justify-between font-semibold p-3 w-full sm:min-h-[9rem] gap-2">
+      <div className="flex flex-col justify-between font-semibold py-4 px-5 w-full gap-2 sm:gap-0 mb-2 sm:mb-0">
         <div className="flex items-start justify-between w-full">
           <div>
             <h2 className="text-gray-800 mb-1">{nombre}</h2>
@@ -69,32 +78,18 @@ export const Tarjeta: React.FC<TarjetaProps> = ({
             <img
               src={
                 estado === "Vivo"
-                  ? "/alive.png"
+                  ? aliveIcon
                   : estado === "Muerto"
-                  ? "/dead.png"
-                  : "/unknown.png"
+                  ? deadIcon
+                  : unknownIcon
               }
               alt={estado}
               className="w-4 h-4"
             />
+
             {estado}
           </span>
         </div>
-
-        {/* <div className="flex gap-4 text-sm mt-2">
-          <div className="grid-cols-6 flex flex-col">
-            <p className="text-xs font-bold text-gray-400 mb-1">
-              Last known location
-            </p>
-            <p className="text-gray-500">{ubicacion}</p>
-          </div>
-          <div className="grid-cols-6 flex flex-col">
-            <p className="text-xs font-bold text-gray-400 mb-1">
-              First seen in
-            </p>
-            <p className="text-gray-500">{origen}</p>
-          </div>
-        </div> */}
 
         <div className="grid grid-cols-12 gap-4 text-sm mt-2">
           <div className="col-span-6 flex flex-col">
