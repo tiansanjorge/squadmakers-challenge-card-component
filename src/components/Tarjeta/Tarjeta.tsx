@@ -60,11 +60,11 @@ export const Tarjeta: React.FC<TarjetaProps> = ({
       </div>
 
       {/* Contenido */}
-      <div className="flex flex-col justify-between font-semibold py-4 px-5 w-full gap-2 sm:gap-0 mb-2 sm:mb-0">
+      <div className="flex flex-col justify-between py-4 px-5 w-full gap-2 sm:gap-0 mb-2 sm:mb-0">
         <div className="flex items-start justify-between w-full">
           <div>
-            <h2 className="text-gray-800 mb-1">{nombre}</h2>
-            <p className="text-sm text-gray-400">{especie}</p>
+            <h2 className="font-semibold text-gray-800 mb-1">{nombre}</h2>
+            <p className="text-sm text-[#575B52]">{especie}</p>
           </div>
           <span
             className={`text-sm font-semibold px-2 py-1 rounded-full flex items-center gap-1 self-start ${
@@ -93,13 +93,13 @@ export const Tarjeta: React.FC<TarjetaProps> = ({
 
         <div className="grid grid-cols-12 gap-4 text-sm mt-2">
           <div className="col-span-6 flex flex-col">
-            <p className="text-xs font-bold text-gray-400 mb-1">
+            <p className="text-xs font-bold text-[#808C73] mb-1">
               Last known location
             </p>
             <p className="text-gray-500">{ubicacion}</p>
           </div>
           <div className="col-span-6 flex flex-col">
-            <p className="text-xs font-bold text-gray-400 mb-1">
+            <p className="text-xs font-bold text-[#808C73] mb-1">
               First seen in
             </p>
             <p className="text-gray-500">{origen}</p>
