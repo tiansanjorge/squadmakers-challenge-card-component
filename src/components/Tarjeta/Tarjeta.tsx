@@ -60,7 +60,7 @@ export const Tarjeta: React.FC<TarjetaProps> = ({
       </div>
 
       {/* Contenido */}
-      <div className="flex flex-col justify-between py-4 px-5 w-full gap-2 sm:gap-0 mb-2 sm:mb-0">
+      <div className="flex flex-col justify-evenly py-3 px-5 w-full gap-2 sm:gap-0">
         <div className="flex items-start justify-between w-full">
           <div>
             <h2 className="font-semibold text-gray-800 mb-1">{nombre}</h2>
